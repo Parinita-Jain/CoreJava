@@ -1,0 +1,574 @@
+Variables
+
+In any application we usually write the instruction in the IPO format
+IPO (Input - Process - Output)
+
+Variable is the location in the memory to store/hold the data.
+Variable will be associated with three things:
+1. Name/Identifier
+2. Data/Value
+3. Datatype
+
+Datatypes: Describe the type of the data that can be stored in the memory and also specifies the amount of the memory to be allocated to the variable.
+
+We have 8 primitive datatypes in java:
+
+Number (Whole Number) ===> 45, 94869,43985 ,-45689
+
+1. byte			1 byte		(-128 to 127)
+2. short		2 bytes
+3. int			4 bytes
+4. long			8 bytes
+
+Number (Decimal) ===> 56.34,5465.546
+
+5. float		4 bytes
+6. double		8 bytes
+
+Character (Single Character) ===> a,f,&,*
+
+7. char			2 bytes
+
+Boolean ===> true, false
+
+8. boolean
+
+Non-primitive Datatype
+
+String ===> sequence of characters
+Array
+Object
+Enum
+
+Variable declaration
+Java is statically-type language, hence we need to declare the variable with the datatype and then we can assigned it with the value.
+
+Syntax:
+datatype variablename;
+datatype variable1,variable2;
+
+OR 
+
+datatype variablename = value; 
+Values assigned directly to the variable are known as literals.
+
+Comments:
+Notes that can be added in the java program. It can also be used to mark some lines of the code that needs to be ignored by the compiler.
+
+1. Single Line Comments (//comment)
+2. Multiline Comments (/* comments line1
+								comments line2*/)
+
+Rules of Naming the Variables:
+1. Should contain letters, digits, underscore or dollar only.
+2. Should not start with the digit
+3. Should start with letter, underscore or dollar
+4. Are case-sensitive
+5. Reserved keyword cannot be used
+
+Operators:
+Operators are symbols that perform operation on the variable and values(literal). Variables and values on which the operator performs some operation are known as operands.
+
+1. Arithmetic Operators
+
+Binary Arithmetic Operator: Work on two operands 
++ Addition
+- Subtraction
+* Multiplication
+/ Division --> Quotient
+% Modulus --> Remainder
+
+Unary Arithmetic Operator: Work on only one operand
+++ increment (pre/post) -> value is incremented by 1
+-- decrement (pre/post) -> value is decremented by 1
+
+2. Assignment Operator
+Used to assign the value to the variable. This value might be literal or result of some arithmetic/logical operation.
+
+variable = value
+
+Compound Assignment Operator
+
++=, -=, *= , /=, %=
+
+Used to change the value of the variable and reassign the same variable with the new value 
+
+a = a + b  ===> a += b
+
+price = price * 0.05 ===> price *= 0.05
+
+rate = rate / 90 ===> rate /= 90
+
+
+3. Comparison/Relational/Conditional Operators ===> result is boolean value
+
+<	less than
+>	greater than
+<=	less than or equal
+>=	greater than or equal
+==	equal to
+!=	not equal to
+
+a=6
+b=5
+
+a<b ==> false
+a>b ==> true
+a==b ==> false
+a!=b ==> true
+
+a=8
+b=8
+a<b ==> false
+a<=b ==> true
+a==b ==> true
+a!=b ==> false
+
+4. Logical Operators ===> result is boolean value
+
+Used to combine two or more conditions:
+&&	(Logical and)
+Will evaluate to true if both the conditions are true, otherwise will return false
+
+true && true 		==>true
+true && false		==>false
+false && true		==>false
+false && false		==>false
+
+||	(Logical or)
+Will evaluate to true if any one condition is true
+
+true || true		==>true
+true || false		==>true
+false || true		==>true
+false || false		==>false
+
+Used to reverse/invert the result of the condition
+!	(Logical not)
+
+!true 	==>false
+!false	==>true
+
+5. Bitwise Operators
+
+Works only on integer values, the value will be first converted to binary equivalent, then the operator will perform the respective operation on the converted value and give the result. This result is also in binary which is again converted into decimal equivalent and now this value will returned to the user.
+
+Decimal ===> number created using decimal digits (0-9) eg. 7586,835,5437829
+Binary ===> number created using only two digits (0,1) eg. 100101,1010,1011
+
+Bitwise operator are not used frequently in the software IT market, but is relevent in the hardware and networking market.
+
+& (Bitwise AND)
+
+Truth Table
+
+a	b	a&b
+0	0	0
+0	1	0
+1	0	0
+1	1	1
+
+| (Bitwise OR)
+
+Truth Table
+a	b	a|b
+0	0	0
+0	1	1
+1	0	1
+1	1	1
+
+^ (Bitwise XOR)
+
+Truth Table
+
+a	b	a^b
+0	0	0
+0	1	1	
+1	0	1
+1	1	0
+
+~ (Bitwise NOT) ==> Unary Operator
+
+For any number:
+1. the sign of the number will be reversed (positive will become negative/ negative will become positive)
+2. 1 will be added in the number
+
+>> (Right Shift)
+<< (Left Shift)
+Both the operator actually work on single operand but they do have a second which specifies how many times shift of the digits is to done.
+
+Convert the number from decimal to binary, we need to divide the number by 2 and collect the remainder. Keep on dividing the number by 2, till the quotient is not 0.
+
+
+6. Ternary Operator (?:) ===> 3 operands
+Can be used to replace the if..else statement
+
+Syntax:
+
+variablename = condition ? expression1 : expression2
+
+If the condition is true, expression1 is executed
+If the condition is false, expression2 is executed
+
+
+
+Typecasting
+Changing the datatype of the variable/value to another datatype
+
+Types of typecasting:
+1. Implicit Typecasting/Widening: Typecasting done by the compiler
+
+byte -> short -> int -> long -> float -> double
+
+char -> int
+
+2. Explicit Typecasting/Narrowing: Typecasting done by the programmer
+
+byte <- short <- int <- long <- float <- double
+
+char <- int
+
+Input from the user
+
+We can the input from the user using Scanner class
+
+Include the following statement in the program we you want to take the input value from the user
+
+1. import java.util.Scanner;
+
+We have to import the Scanner class from java.util package. For using default classes like String and System we don't import any package because these classes are part of the default package that is available to all the java file called java.lang package
+
+2. Scanner s = new Scanner(System.in);
+
+Creating the instance of the Scanner class
+
+3. Depending upon the datatype of the variable, we can use different functions of the Scanner class to take the input
+
+byte		nextByte()
+short		nextShort()
+int			nextInt()
+long		nextLong()
+float		nextFloat()
+double		nextDouble()
+boolean 	nextBoolean()
+String		next()/nextLine()
+char		next().charAt(0)
+
+Control Statement
+The execution of the statements in the program will be based on whether the condition/criteria is true or false. Conditions are created using conditional/comparison/relational operators and logical operators
+
+1. Conditional Control Statements
+
+I. Simple if statement
+
+Syntax:
+if (condition/test_expression){
+	code block
+}
+
+The code block will contain some statement that will be executed if the condition result is true. If the condition is false nothing special has to be implemented.
+
+If the code block contains only one statement we can skip the curly braces of the if or else statement. But if code block contains more than one statement then we need to include them in the curly braces.
+
+II. if..else statement
+
+Syntax:
+if (condition/test_expression){
+	code block 1
+}
+else{
+	code block 2
+}
+
+The code block 1 will be executed if the condition is true. The code block 2 will be executed if the condition is false. Both will never execute together.
+
+III. if..else..if statement (if..else ladder)
+
+Syntax:
+if (condition1){
+	code block 1
+}
+else if(condition2){
+	code block 2
+}
+else if(condition3){
+	code block 3
+}
+....
+....
+else {
+	code block n
+}
+
+The code block 1 will be executed if the condition1 is true. If condition1 is false the condition2 will be checked, if it is true code block 2 will be executed. If the condition2 is false, the condition3 will be checked, if it is true code block 3 will be executed and so on. If none of the above mentioned conditions are true then the last else block will be executed.
+
+IV. Nested if statement
+
+Syntax:
+if(condition1){ ===> outer if
+	code block 1
+	if(condition2)	{  ===> inner if
+		code block 2
+	}
+}
+
+The code block 1 will be executed if the condition1 is true and in the code block 1 we are checking one more condition ie. condition2. If this condition is true than the code block 2 will be executed. Here the condition2 will be checked only if the condition1 is true. Here inner if will be executed only if the result of the outer if is true.
+
+
+V. switch..case statement
+
+Syntax:
+switch(expression){
+	case value1:	statements;
+					break;
+	case value2:	statements;
+					break;
+	case value3:	statements;
+}
+
+expression ==> variable ==> int, short, byte, char, String, Enum
+
+In switch case, the value of the expression is checked and if it matches with any of the case values, the control of the program executed will jump to the respestive case statement.
+
+We notice that went the program executed jumps on a particular case, the statement related that case and all subsequent cases is also executed. To avoid the execution of the subsequent cases we can use break statement to stop the execution of the switch case and move the execution control out of the switch case.
+
+default case is the special case which will be executed if none of the case matches with the value of the expression and this case can written anywhere inside the switch case
+
+2. Loop Control Statements
+Loops are used to repeat a block of code based on some condition. Write the code once, execute it multiple times.
+
+I. for loop
+Use the for loop when we know before hand the number of times the loop code block has to be executed.
+
+Syntax:
+for(initialize_expresion; test_expression; update_expression){
+	code block
+}
+
+initialize_expression: initailize the variables and this expression will be executed only once at the start of the loop.
+
+test_expression: After the initialization, the test_expression will be executed. If the result of this expression is true, code block will be executed. This expression will be again executed after the update_expression to check if the condition is true. So everytime after the code block execution, test_expression will be used to check the condition and decide whether the code block has to be executed or not.
+
+update_expression: This expression is executed after the code block execution and then test_expression will be executed.
+
+II. while loop
+
+Syntax:
+while(test_expression){
+	code block
+}
+
+If test_expression is true, the code block will be executed else the loop will be terminated.
+
+While loop can work similar as for loop, where initialize_expression is written before the loop statement and the update_expression is written as the last statement of the code block
+
+III. do..while loop
+
+Syntax:
+do{
+	code block
+}
+while(test_expression);
+
+In for and while, first iteration will happen only if the test_expression is true and further iterations will also depend on the test_expression result.
+
+In do..while loop, first iteration of the loop is implemented without checking any condition but further iterations will depend on the test_expression result.
+
+In short we can say, the code block statements in the do..while loop will be executed atleast once without checking the condition.
+
+IV. enhanced for loop (with arrays)
+
+Mostly used with arrays or collections from the collection API.
+
+For array:
+datatype[] variable = new datatype[5];
+Syntax:
+for(datatype var : variable){
+	code block
+}
+
+datatype mentioned in the enhanced for loop should be same as that of the datatype of the array.
+
+The number of times the code block will be executed will depend on the size of the array.
+
+Enhanced for loop can be used only for reading the values for the array and not to insert or update the values of the array, because here we are not aware about the index number of the array.
+
+Advantage of using this loop is that we don't have to worry about the lenght, index number of the array.
+
+
+-----------------------------------------------------------------
+break statement: this statement is used to stop the execution of the loop based on some condition. After the execution of this statement, the loop will simply termination and further execution of the loop will be done.
+
+continue statement: this statement will not stop the execution of the loop, instead the loop will continue. When continue statement is executed the statements after this will be skipped for current iteration.
+
+------------------------------------------------------------
+Nested Loop
+Loop within the loop
+
+Here we have atleast two loops, inner loop and outer loop, inner loop is nested inside the outer loop.
+
+The execution of the inner loop will depend on the whether the outer loop is running. For every iteration of the outer loop, inner loop will be restarted.
+
+Nested loop will be used for creating pattern, multidimensional arrays, matrix calculution.
+
+----------------------------------------------------
+Arrays
+
+Collection of the values of similar datatype
+
+Imagine we want to store aggregate marks of 50 students
+1. use variables, we will create 50 variable to store the marks of each student.
+2. use array variable, which is a single variable that can store 50 marks.
+
+Create the array
+
+Syntax:
+datatype[] array = new datatype[size];
+OR
+datatype array[] = new datatype[size];
+OR
+datatype array[] = {values to be stored in the array}; In this case size will depend on the number of value stored in the array
+datatype array[] = new datatype[]{value to be stored in the array}; In this case size will depend on the number of value stored in the array
+
+Decide the size of the array very carefully, because we cannot change the size of the array at the runtime.
+
+---------------------------------------------------------
+Access the elements/value in the array
+
+The elements of the array can be accessed using the index number. Each location in the array is associated with an index number as the array will store the values in the memory in the continuious manner. 
+
+int[] arr = new int[5];
+
+First Location ===> 0 ===> arr[0]
+
+int[] arr = {4,5,6,3,5,8,1,2};  ==> size of this array is 8
+             0 1 2 3 4 5 6 7
+
+Last Location ===> length-1  ===> arr[7]
+
+-----------------------------------------------------
+Multidimensional Arrays (2D)
+
+Students		Eng		Maths		Sci
+student 1 		23		34			89  ==> {23,34,89}
+student 2		78		24			17	===> {78,24,17}
+student 3		67		56			13  ==> {67,56,13}
+
+Arrays within the arrays 
+
+We can create the 2D arrays to store the above data:
+
+int[][] marks = new int[6][3] ===> we are storing 6 rows and 3 column data
+
+int[][] marks = {{23,34,89},{78,24,17},{67,56,13}};
+		   			 0  1  2    0  1  2    0  1  2
+						0			1			2
+
+marks[0] = {23,34,89}
+marks[0][0] = 23
+marks[0][1] = 34
+marks[0][2] = 89
+
+marks[1] = {78,24,17}
+marks[1][1] = 24
+
+marks[2][0] = 67
+
+-----------------------------------------------------------
+Object - Oriented Programming
+
+Procedural Programming
+Here we write the procedure/functions on how to get the things done.
+
+OOP
+Here we will take into consideration not just how the things are done but also the data involved in the functionality. Functionality will vary as per the data.
+
+The main advantage of the OOPs are:
+1. Breaking the program in the smaller parts(objects), separation of the concerns.
+2. Hiding the data and the functionality of the system.
+
+Features of OOPs:
+1. Object
+2. Class
+3. Inheritance (extends/implements)
+4. Polymorphism (static => overloading / dynamic => overriding)
+5. Encapsulation (access modifier, public methods)
+6. Abstraction (abstract class / interface)
+
+------------------------------------------------------
+Object is a real world entity.
+
+Each object will have:
+1. state
+2. behaviour
+
+Person1 ===> me
+name: ekwinder
+age: 34
+phone: 8495649568
+email: ek@gmail.com
+eat()
+sleep()
+walk()
+
+Person2 ===> you
+name: sweta
+age: 20
+phone: 9468845784
+email: sweta@gmail.com
+eat()
+sleep()
+walk()
+
+Person3 ===> you
+name: lakhan
+age: 21
+phone: 4598748570
+email: lakhan@gmail.com
+eat()
+sleep()
+walk()
+
+Conceptuallt we will think of the solution from the object perspectice but while actually programming / implementing that solution we will create a blueprint of these objects known as CLASS in OOPs.
+
+Class: Is a template, blueprint of the object
+
+Object: Is created from the class, you can create any number of objects from the class. Object are also known as instance(example). The process of creating the object from the class is known as instantiation.
+
+OOP is focused on reusable code. We will define only class which is replicated for each object. This concept is known as DRY (Don't Repeat Yourself).
+
+-----------------------------------------------------
+Create the class
+
+Syntax:
+class ClassName{
+		//state (variables/attributes)
+		//behaviour (functions/methods)
+}
+
+variable ==> store the data
+function ==> perform some operation on this data
+
+Conventions (they some standard agreed upon by the programmer to make programming easy and understandable, convention are not rule that has to followed)
+
+1. For naming the class, we use PascalCase where first letter of each word in the class name is in uppercase and rest all letters are in lowercase
+
+class StudentProject
+
+2. For naming the variables and functions of the class, we use camelCase where first word is completely in lowercase and from second word onward we follow PascalCase
+
+void getMarks()
+void getTotalScore()
+
+int dateOfBirth;
+
+
+
+
+
+
+
+
+
+
+
