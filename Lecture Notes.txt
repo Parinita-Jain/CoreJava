@@ -1,0 +1,365 @@
+Variables
+
+In any application we usually write the instruction in the IPO format
+IPO (Input - Process - Output)
+
+Variable is the location in the memory to store/hold the data.
+Variable will be associated with three things:
+1. Name/Identifier
+2. Data/Value
+3. Datatype
+
+Datatypes: Describe the type of the data that can be stored in the memory and also specifies the amount of the memory to be allocated to the variable.
+
+We have 8 primitive datatypes in java:
+
+Number (Whole Number) ===> 45, 94869,43985 ,-45689
+
+1. byte			1 byte		(-128 to 127)
+2. short		2 bytes
+3. int			4 bytes
+4. long			8 bytes
+
+Number (Decimal) ===> 56.34,5465.546
+
+5. float		4 bytes
+6. double		8 bytes
+
+Character (Single Character) ===> a,f,&,*
+
+7. char			2 bytes
+
+Boolean ===> true, false
+
+8. boolean
+
+Non-primitive Datatype
+
+String ===> sequence of characters
+Array
+Object
+Enum
+
+Variable declaration
+Java is statically-type language, hence we need to declare the variable with the datatype and then we can assigned it with the value.
+
+Syntax:
+datatype variablename;
+datatype variable1,variable2;
+
+OR 
+
+datatype variablename = value; 
+Values assigned directly to the variable are known as literals.
+
+Comments:
+Notes that can be added in the java program. It can also be used to mark some lines of the code that needs to be ignored by the compiler.
+
+1. Single Line Comments (//comment)
+2. Multiline Comments (/* comments line1
+								comments line2*/)
+
+Rules of Naming the Variables:
+1. Should contain letters, digits, underscore or dollar only.
+2. Should not start with the digit
+3. Should start with letter, underscore or dollar
+4. Are case-sensitive
+5. Reserved keyword cannot be used
+
+Operators:
+Operators are symbols that perform operation on the variable and values(literal). Variables and values on which the operator performs some operation are known as operands.
+
+1. Arithmetic Operators
+
+Binary Arithmetic Operator: Work on two operands 
++ Addition
+- Subtraction
+* Multiplication
+/ Division --> Quotient
+% Modulus --> Remainder
+
+Unary Arithmetic Operator: Work on only one operand
+++ increment (pre/post) -> value is incremented by 1
+-- decrement (pre/post) -> value is decremented by 1
+
+2. Assignment Operator
+Used to assign the value to the variable. This value might be literal or result of some arithmetic/logical operation.
+
+variable = value
+
+Compound Assignment Operator
+
++=, -=, *= , /=, %=
+
+Used to change the value of the variable and reassign the same variable with the new value 
+
+a = a + b  ===> a += b
+
+price = price * 0.05 ===> price *= 0.05
+
+rate = rate / 90 ===> rate /= 90
+
+
+3. Comparison/Relational/Conditional Operators ===> result is boolean value
+
+<	less than
+>	greater than
+<=	less than or equal
+>=	greater than or equal
+==	equal to
+!=	not equal to
+
+a=6
+b=5
+
+a<b ==> false
+a>b ==> true
+a==b ==> false
+a!=b ==> true
+
+a=8
+b=8
+a<b ==> false
+a<=b ==> true
+a==b ==> true
+a!=b ==> false
+
+4. Logical Operators ===> result is boolean value
+
+Used to combine two or more conditions:
+&&	(Logical and)
+Will evaluate to true if both the conditions are true, otherwise will return false
+
+true && true 		==>true
+true && false		==>false
+false && true		==>false
+false && false		==>false
+
+||	(Logical or)
+Will evaluate to true if any one condition is true
+
+true || true		==>true
+true || false		==>true
+false || true		==>true
+false || false		==>false
+
+Used to reverse/invert the result of the condition
+!	(Logical not)
+
+!true 	==>false
+!false	==>true
+
+5. Bitwise Operators
+
+Works only on integer values, the value will be first converted to binary equivalent, then the operator will perform the respective operation on the converted value and give the result. This result is also in binary which is again converted into decimal equivalent and now this value will returned to the user.
+
+Decimal ===> number created using decimal digits (0-9) eg. 7586,835,5437829
+Binary ===> number created using only two digits (0,1) eg. 100101,1010,1011
+
+Bitwise operator are not used frequently in the software IT market, but is relevent in the hardware and networking market.
+
+& (Bitwise AND)
+
+Truth Table
+
+a	b	a&b
+0	0	0
+0	1	0
+1	0	0
+1	1	1
+
+| (Bitwise OR)
+
+Truth Table
+a	b	a|b
+0	0	0
+0	1	1
+1	0	1
+1	1	1
+
+^ (Bitwise XOR)
+
+Truth Table
+
+a	b	a^b
+0	0	0
+0	1	1	
+1	0	1
+1	1	0
+
+~ (Bitwise NOT) ==> Unary Operator
+
+For any number:
+1. the sign of the number will be reversed (positive will become negative/ negative will become positive)
+2. 1 will be added in the number
+
+>> (Right Shift)
+<< (Left Shift)
+Both the operator actually work on single operand but they do have a second which specifies how many times shift of the digits is to done.
+
+Convert the number from decimal to binary, we need to divide the number by 2 and collect the remainder. Keep on dividing the number by 2, till the quotient is not 0.
+
+
+6. Ternary Operator (?:) ===> 3 operands
+Can be used to replace the if..else statement
+
+Syntax:
+
+variablename = condition ? expression1 : expression2
+
+If the condition is true, expression1 is executed
+If the condition is false, expression2 is executed
+
+
+
+Typecasting
+Changing the datatype of the variable/value to another datatype
+
+Types of typecasting:
+1. Implicit Typecasting/Widening: Typecasting done by the compiler
+
+byte -> short -> int -> long -> float -> double
+
+char -> int
+
+2. Explicit Typecasting/Narrowing: Typecasting done by the programmer
+
+byte <- short <- int <- long <- float <- double
+
+char <- int
+
+Input from the user
+
+We can the input from the user using Scanner class
+
+Include the following statement in the program we you want to take the input value from the user
+
+1. import java.util.Scanner;
+
+We have to import the Scanner class from java.util package. For using default classes like String and System we don't import any package because these classes are part of the default package that is available to all the java file called java.lang package
+
+2. Scanner s = new Scanner(System.in);
+
+Creating the instance of the Scanner class
+
+3. Depending upon the datatype of the variable, we can use different functions of the Scanner class to take the input
+
+byte		nextByte()
+short		nextShort()
+int			nextInt()
+long		nextLong()
+float		nextFloat()
+double		nextDouble()
+boolean 	nextBoolean()
+String		next()/nextLine()
+char		next().charAt(0)
+
+Control Statement
+The execution of the statements in the program will be based on whether the condition/criteria is true or false. Conditions are created using conditional/comparison/relational operators and logical operators
+
+1. Conditional Control Statements
+
+I. Simple if statement
+
+Syntax:
+if (condition/test_expression){
+	code block
+}
+
+The code block will contain some statement that will be executed if the condition result is true. If the condition is false nothing special has to be implemented.
+
+If the code block contains only one statement we can skip the curly braces of the if or else statement. But if code block contains more than one statement then we need to include them in the curly braces.
+
+II. if..else statement
+
+Syntax:
+if (condition/test_expression){
+	code block 1
+}
+else{
+	code block 2
+}
+
+The code block 1 will be executed if the condition is true. The code block 2 will be executed if the condition is false. Both will never execute together.
+
+III. if..else..if statement (if..else ladder)
+
+Syntax:
+if (condition1){
+	code block 1
+}
+else if(condition2){
+	code block 2
+}
+else if(condition3){
+	code block 3
+}
+....
+....
+else {
+	code block n
+}
+
+The code block 1 will be executed if the condition1 is true. If condition1 is false the condition2 will be checked, if it is true code block 2 will be executed. If the condition2 is false, the condition3 will be checked, if it is true code block 3 will be executed and so on. If none of the above mentioned conditions are true then the last else block will be executed.
+
+IV. Nested if statement
+
+Syntax:
+if(condition1){ ===> outer if
+	code block 1
+	if(condition2)	{  ===> inner if
+		code block 2
+	}
+}
+
+The code block 1 will be executed if the condition1 is true and in the code block 1 we are checking one more condition ie. condition2. If this condition is true than the code block 2 will be executed. Here the condition2 will be checked only if the condition1 is true. Here inner if will be executed only if the result of the outer if is true.
+
+
+V. switch..case statement
+
+Syntax:
+switch(expression){
+	case value1:	statements;
+					break;
+	case value2:	statements;
+					break;
+	case value3:	statements;
+}
+
+expression ==> variable ==> int, short, byte, char, String, Enum
+
+In switch case, the value of the expression is checked and if it matches with any of the case values, the control of the program executed will jump to the respestive case statement.
+
+We notice that went the program executed jumps on a particular case, the statement related that case and all subsequent cases is also executed. To avoid the execution of the subsequent cases we can use break statement to stop the execution of the switch case and move the execution control out of the switch case.
+
+default case is the special case which will be executed if none of the case matches with the value of the expression and this case can written anywhere inside the switch case
+
+2. Loop Control Statements
+Loops are used to repeat a block of code based on some condition. Write the code once, execute it multiple times.
+
+I. for loop
+Use the for loop when we know before hand the number of times the loop code block has to be executed.
+
+Syntax:
+for(initialize_expresion; test_expression; update_expression){
+	code block
+}
+
+initialize_expression: initailize the variables and this expression will be executed only once at the start of the loop.
+
+test_expression: After the initialization, the test_expression will be executed. If the result of this expression is true, code block will be executed. This expression will be again executed after the update_expression to check if the condition is true. So everytime after the code block execution, test_expression will be used to check the condition and decide whether the code block has to be executed or not.
+
+update_expression: This expression is executed after the code block execution and then test_expression will be executed.
+
+II. while loop
+III. do..while loop
+IV. enhanced for loop (with arrays)
+
+-----------------------------------------------------------------
+break statement: this statement is used to stop the execution of the loop based on some condition. After the execution of this statement, the loop will simply termination and further execution of the loop will be done.
+
+continue statement: this statement will not stop the execution of the loop, instead the loop will continue. When continue statement is executed the statements after this will be skipped for current iteration.
+
+
+
+
