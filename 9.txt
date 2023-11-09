@@ -1,0 +1,177 @@
+
+Object - Oriented Programming
+
+Procedural Programming
+Here we write the procedure/functions on how to get the things done.
+
+OOP
+Here we will take into consideration not just how the things are done but also the data involved in the functionality. Functionality will vary as per the data.
+
+The main advantage of the OOPs are:
+1. Breaking the program in the smaller parts(objects), separation of the concerns.
+2. Hiding the data and the functionality of the system.
+
+Features of OOPs:
+1. Object
+2. Class
+3. Inheritance (extends/implements)
+4. Polymorphism (static => overloading / dynamic => overriding)
+5. Encapsulation (access modifier, public methods)
+6. Abstraction (abstract class / interface)
+
+------------------------------------------------------
+Object is a real world entity.
+
+Each object will have:
+1. state
+2. behaviour
+
+Person1 ===> me
+name: ekwinder
+age: 34
+phone: 8495649568
+email: ek@gmail.com
+eat()
+sleep()
+walk()
+
+Person2 ===> you
+name: sweta
+age: 20
+phone: 9468845784
+email: sweta@gmail.com
+eat()
+sleep()
+walk()
+
+Person3 ===> you
+name: lakhan
+age: 21
+phone: 4598748570
+email: lakhan@gmail.com
+eat()
+sleep()
+walk()
+
+Conceptually we will think of the solution from the object perspective but while actually programming / implementing that solution we will create a blueprint of these objects known as CLASS in OOPs.
+
+Class: Is a template, blueprint of the object
+
+Object: Is created from the class, you can create any number of objects from the class. Object are also known as instance(example). The process of creating the object from the class is known as instantiation.
+
+OOP is focused on reusable code. We will define only class which is replicated for each object. This concept is known as DRY (Don't Repeat Yourself).
+
+-----------------------------------------------------
+Create the class
+
+Syntax:
+class ClassName{
+		//state (variables/attributes)
+		//behaviour (functions/methods)
+}
+
+variable ==> store the data
+function ==> perform some operation on this data
+
+Conventions (they some standard agreed upon by the programmer to make programming easy and understandable, convention are not rule that has to followed)
+
+1. For naming the class, we use PascalCase where first letter of each word in the class name is in uppercase and rest all letters are in lowercase
+
+class StudentProject
+
+2. For naming the variables and functions of the class, we use camelCase where first word is completely in lowercase and from second word onward we follow PascalCase
+
+void getMarks()
+void getTotalScore()
+
+int dateOfBirth;
+
+--------------------------------------------------------
+Create the object
+
+ClassName objectvariable = new ClassName();
+
+new ClassName() ===> this statement will actually create the object in the memory.
+
+objectvariable ===> will be used to identify the object. 
+
+int a = 10;
+
+eg.
+
+Person p1 = new Person();
+Person p2 = new Person();
+
+new Person(); ===> if only this statement is written without associating it with the objectvariable then this object cannot be used again in the program.
+
+Person p1 ===> p1 is the variable that will identify some object of the class Person because its datatype has been specified as Person
+
+If we want to refer the state and the behaviour of the class, we will be using objectvariable that is identifying the object followed by a period(.) and then the state or behaviour required.
+
+-------------------------------------------------
+Methods/Functions
+
+Divide the complex program in the smaller chunks using methods which are also reused.
+
+How Method works:
+
+1. Declare the method
+
+Syntax:
+access_specifier return_type  method_name(parameters) ==> method signature
+{
+	code block
+}
+
+In a class, method is declared along with the body (implementation), code block. This code block we will executed when the method is called.
+
+parameter are optional, a method can have zero or more parameters. While declaring the method, we specify the number of parameter and the datatype of each parameter. While calling the method, the values has to be passed to each parameter declared and the value that will be passed should be of the same datatype as declared.
+
+return_type specifies the type of the value that the method will return to the caller. If the return_type is specified as void, then the method will not return anything to the caller.
+
+If the return_type is specifies as any other datatype, then the method has to return the value to the caller based on this type using return statement.
+
+return statement will return the value to the caller and also the control of the execution back to the caller. This statement should be written as the last statement of the method body.
+
+2. Call the method
+
+Syntax:
+
+objectvariable.method_name(arguments)
+
+if parameter are defined with the method, then the values will have to be passed to the method as the arguments
+
+When the method is called, the current method execution will be paused and the control be passed to the called method. After the code block of the called method is executed completely, the call will return back to the caller method and the remaining statements of the current method will be completed.
+
+------------------------------------------------------------------
+Variable Length Argument(VarArgs)
+
+If we want to pass multiple values to the method, we can create an array, fill the array and then pass this array as the argument. The method that will accept this array should have been defined with the array parameter.
+
+We can also pas multiple values by declaring the parameter of the method as varargs parameter using three periods (...) with the datatype of the parameter. Here the array is created for these arbitrary values implicitly. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
