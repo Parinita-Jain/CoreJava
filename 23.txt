@@ -1,0 +1,123 @@
+Wrapper Classes
+
+Object oriented interface for the primitive data types.
+
+It is possible to convert the primitive data type values into objects and also to convert objects into primitive data type values.
+
+Primitive --> Object --> Wrapping(Boxing)
+Object --> Primitive --> Unwrapping(Unboxing)
+
+If boxing is done by the compiler then it is called autoboxing. If unboxing is also done by compiler then it is called auto-unboxing.
+
+All the wrapper classes are part of java.lang package
+
+int			Integer
+byte		Byte
+short		Short
+long		Long
+float 		Float
+double		Double
+boolean		Boolean
+char		Character
+
+The wrapper classes are required mostly for saving the data in the collection as, the collection api supports only objects and not primitive datatypes.
+
+-----------------------------------------------
+Collection API/Framework
+
+Collection is the group of elements stored as the single unit.
+
+Collection Framework is set of classes and interfaces which  implement different types of the collection.
+
+Collection interface is the part of the collection framework which also contains Map and Iterator interface;
+
+This entire framework is part of java.util package.
+
+This framework was added in JDK 1.2, it can not the part of the JDK before 1.2 version. If we wanted to use this collection framework before it was added in the JDK, we used to add this framework as external file/library. 
+
+This external collection framework was made up of some classes and interfaces that has been incorporated in the current collection framework. Some of these classes are Vector, Stack, Hashtable, Properties, etc. All these classes or interfaces coming from old collection framework are class legacy classes.
+
+Immutable Objects ==> for every change new memory location is allocated, changes are not reflected in the original location:
+
+1. String 
+2. Wrapper Classes
+3. Legacy Classes
+
+----------------------------------------------------
+Collection Interface
+
+Root interface of the main collection framework. It is inherited by the following interfaces:
+
+1. List
+-elements are stored in the ordered manner. 
+-elements can be accessed using the index number.
+-duplicate values are allowed.
+
+2. Set
+-elements are not stored in the ordered manner.
+-elements cannot be accessed using the index number.
+-duplicate values are not allowed.
+
+3. Queue
+-elements are not stored in the ordered manner.
+-elements cannot be accessed using the index number.
+-duplicate values are allowed.
+
+	Deque
+	-extends the queue interface
+	-in deque, elements can be added and removed from both the ends
+	-in queue, elements are added from one end and removed from the another end
+
+
+---------------------------------------------------
+Generic Collection
+
+Introduced in JAVA SE 5. Collection is made type-safe and this type-safety will be checked at the compile time.
+
+Syntax:
+class<type>, interface<type>
+
+Is mainly used to give the specific to the collection and avoid runtime errors.
+
+----------------------------------------------------
+Map Interface
+
+Elements are stored in key/value pair format.
+
+eg.
+English=90 ==> single element
+key=value
+
+Maths=45
+Science=89
+
+Key part of the Map collection cannot contain duplicates whereas the value part of the Map collection can contain duplicates.
+
+HashMap class does not retain the insertion order.
+
+LinkedHashMap class retain the insertion order.
+
+TreeMap class does not retain the insertion order but the key portion will be sorted.
+
+----------------------------------------------------
+Different ways to traverse through the collection:
+
+Traversing ==> Accessing individual elements of the collection.
+
+1. Normal for loop
+Can be used only for list as here we will using the index number to access the elements of the collection
+
+2. Enhanced for loop
+Can be used for any collection but only for reading the elements and not for manipulating
+
+3. Iterator Interface
+Can be used for any collection and can be used to read and manipulate the elements of the collection
+We can create the instance of the Iterator using iterator() method on the collection. This iterator will read the values only in one direction.
+
+4. ListIterator Interface
+It extends Iterator interface. Can be used only for List collection.
+We can create the instance of the ListIterator using listIterator() method on the collection. This iterator can be used to traverse the collection in both directions.
+
+ 
+
+5. forEach() method
