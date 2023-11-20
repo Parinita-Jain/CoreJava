@@ -1,0 +1,67 @@
+Threading 
+
+Multitasking vs Multithreading
+
+Multitasking: Multiple Processes/Application running in a machine. It is OS based. Each process/application is independent having its own separate resources(memory/cpu).
+
+Multithreading: It is process based. Multiple thread of single process run simultaneously. They will share the resources of the process. 
+
+--------------------------------------------------
+Sequencial Execution
+Every method is executed one after the another. One method call will wait for the another method to return.
+
+Parallel Execution
+Every method is executed parallely/simultanously. One method call will not wait for another method to return, instead they will be called parallel. This parallel implementation is possible using Threads
+
+--------------------------------------------------
+Ways to create Threads
+1. By extending Thread class
+2. By implementing Runnable interface
+
+In both the cases the implementation of the thread should be provided in the run() method
+
+We never call the run() method directly. Instead we will start the thread first, the run() will be automatically.
+
+Runnable interface is a functional interface, it defines only one method to be implemented by any class.
+
+-------------------------------------------------
+Life Cycle of Thread
+
+1. New: Thread comes at the New stage when we create the object of the Thread class.
+
+2. Runnable: Thread will move to the Runnable stage when the start() method is called on the Thread object. All the threads that are started will first move to Runnable stage and then will be moved to Running stage when CPU will schedule its execution.
+
+3. Running: Thread will move from Runnable stage to Running stage for the execution. Here the run() method will be executed. 
+
+4. Terminated/Dead: Thread will move to Terminated stage when the execution of the run() method is completed.
+
+5. Blocked: Thread will move to Blocked stage when it will be paused for some reason(waiting for some resource like file). Once the resource is available to the thread, it will be moved back in the Runnable stage. One way of blocking the thread is putting the current thread to sleep using the sleep() method for some milliseconds
+
+----------------------------------------------------
+Synchronization
+
+Is capability to control the access of the multiple thread to any shared resources. Here we can implement locking system where one thread can lock a resource complete its task. Till first thread is not releasing the lock, no other thread can access this resource. Once first thread releases the lock, now any thread can acquire the lock over the resource.
+
+Can be achieved in two ways:
+1. by using synchronized method
+2. by using synchronized block
+
+Here synchronized keyword is used to implement synchronization in java
+
+----------------------------------------------------
+Daemon Thread
+
+Also known as helper thread / background thread
+
+These threads are dependent on some main thread for the execution. If the main thread terminates the daemon thread will be terminated too.
+
+We will create daemon thread as a normal thread but will convert it into daemon thread using the method setDaemon(true) before starting the thread
+
+---------------------------------------------------
+Thread Pools
+
+When we create the object of the Thread class, JVM will spend some time in creating this object and then controlling its lifecycle. This thread object will be terminated when the run() method ends. So for next execution Thread class object is created again.
+
+For every implementation a new thread object has to be created. But we can avoid this by created a pool of threads, where the objects of the thread as created and can be reused for different implementations. In thread pool, if the implementation is assigned to any thread, thread will move out of pool, completes the execution and will come back in the pool. Its never terminated.
+
+Thread Pool concept is implemented using Executor framework. This framework provides the classes and interface needed for thread pooling and is part of the package java.util.concurrent
