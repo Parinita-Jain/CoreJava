@@ -1,0 +1,128 @@
+JDBC API
+
+Consist of the classes and interface required to connect with the database. This API is part of java.sql package.
+
+Database is file to store the data in the organized manner.
+
+Organized manner means the format in which the data will be stored in the database.
+
+In our case, we are going to use relational database where the data is stored in
+the tabular format.
+
+In order to access the database, we use DBMS (Database Management System) which uses SQL to perform any task on the database.
+
+JDBC is used for connecting and executing the queries on the database. JDBC API will use the Drivers to connect with the database. 
+
+JDBC driver is a software that enables the Java application to interact with the database. It also helps the database and java application to understand and give the result as required.
+
+---------------------------------------------------------------
+Create a database
+
+Install xampp/mysql workbench
+
+Using XAMPP
+1. Start xampp control panel
+2. Start Mysql
+3. Click on Shell Button.
+4. Connect with the DBMS:
+	mysql -u root
+5. Create the database
+	create database cj_3_5;
+6. Start using the created database
+	use cj_3_5;
+7. Create the table
+	create table student
+	(
+		id int primary key auto_increment,
+		name varchar(20) unique not null,
+		age int,
+		marks decimal(10,2)
+	);
+8. Insert some sample values in the table
+	insert into student(name,age,marks) values
+	("harry",17,67.35),
+	("ron",18,56.34),
+	("hermione",18,89.67);
+9. Lets see the values in the table
+	select * from student;
+
+---------------------------------------------------------
+Add the driver file in the java application
+
+1. Create new project in Eclipse IDE
+2. Right-click on the project folder, select Build Path, select Configure Build Path
+3. Select Libraries tab, select classpath
+4. Click on Add External JARs, traverse the where the jar file is saved and select the required jar file
+5. Click on Apply and Close
+
+--------------------------------------------------------
+Using JDBC to create the database connection:
+
+1. Register the driver class
+
+forName() method of the class Class is used to register the Driver class. This method is used to dynamically load the Driver class.
+ 
+2. Connect with the database
+
+getConnection() method of the DriverManager class is used to extablish the connection with the database. To create the connection with the database we need tp provide the location/URL of the database server (here we will use localhost), username and password and also the name of the database
+
+3. Create the Statement (Query)
+
+createStatement() of the Connection object is used to create the statement to be executed in the database
+
+4. Execute the Statement (Query)
+
+executeQuery() method of the Statement object is used to actually execute the query and get the result from the database. This method will return ResultSet object in correspondance to the table of the database.
+
+5. Stop the connection with database
+
+close() method of the Connection object to close the connection with the database
+
+--------------------------------------------------------
+CRUD Operation
+Create, Read, Update, Delete
+
+Mini Project using Database
+
+Java Files to be created for the menu-driven application:
+
+1. Main Project File (Main UI Interface): This file will contain the main() method and the menu through the user will interact with the system
+
+2. Data Connection File: This file will contain the code for just connecting with the database
+
+3. Model File: These files are POJO(Plain Old Java Object) classes. Create the separate model file for each table in the database. These files will define the class corresponding to the table where each column will have an attribute defined in the class. It will also contain getter/setter method of each attribute and toString() method.
+
+4. Data Access Object File: These files will contain the code to access the data in the database and map the database tables with the objects of the model class. This file will contain the code to implement CRUD operation.
+
+--------------------------------------------------------
+1. Create a new package, com.itvedent.student
+2. Create the model file for Student table
+3. Create the Main App file containing the menu
+4. Create the database connection file
+5. Create the DAO file to perform the CRUD operations
+
+-------------------------------------------------------
+PreparedStatement Interface
+
+Statement Interface is used to execute the static queries which will not change at the runtime. But if we want the values to added in the query at runtime we will used PreparedStatement interface
+
+---------------------------------------------------------
+CallableStatement Interface
+
+Used to execute the stored procedures in the database
+
+Stored Procedure: Is SQL code that can be saved, so that the code can be reused. If there is any SQL statement that needs to be written again and again, we can save it as the stored procedure.
+
+Lets first create a stored procedure:
+
+delimiter //
+
+create procedure insertproc(n varchar(20), a int, m decimal(10,2))
+begin
+insert into student(name,age,marks)
+values(n,a,m);
+end//
+
+delimiter ;
+
+
