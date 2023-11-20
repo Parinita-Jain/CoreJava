@@ -1,0 +1,44 @@
+Files
+
+Are the named locations that can be used to store related information.
+
+------------------------------------------------------
+Read and Write from the file
+
+We use the Stream class to implement read and write operation on the file
+
+Stream Classes will access the I/O stream that Java provides to read and write from any source. Source can be network, file, thread, console, etc.
+
+I/O stream that will perform read and write uses the sequence of the data. Means data will read/write from the file either byte-by-byte/character-by-character.
+
+Types of Stream
+1. Byte Stream: Read/Write data in byte format
+FileInputStream ==> Read
+FileOutputStream ==> Write
+
+2. Character Stream: Read/Write data in character format
+FileReader ==> Read
+FileWriter ==> Write
+
+All the I/O classes are part of java.io package.
+
+------------------------------------------------------
+Serialization
+
+Process of converting the object-state (object + values of the attributes of the object) into byte stream is called Serialization. ObjectOutputStream class has a method writeObject() which is used to perform Serialization
+
+By default in Java we cannot Serialize the object of the class unless the class implement a marker interface called Serializable.
+
+Serializable interface is marker interface means it is an empty interface with no method to be overridden.
+
+Process of converting the byte-stream data into object-state is called Deserialization. ObjectInputStream class has a method readObject() which is used to perform Deserialization.
+
+transient modifier is used to specify the field/attributes of the class that should not be Serialized.
+
+
+
+
+
+
+
+
