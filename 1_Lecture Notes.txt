@@ -1,0 +1,62 @@
+Java Development Kit ===> Programmer 
+JDK (Helper file, compiler, jre)
+
+Java Runtime Environment ==> End-User to execute .class
+Installed separately
+
+Java Virtual Machine ==> Enable the computer to run the java program (.class)
+
+JVM makes the java application platform-independent but it itself is not platform independent.
+
+For every different OS, JVM created for that OS has to installed in the machine
+
+Conventions ==> not the rules that we have to follows but they are some standards setup by programmers to make the code more readable and understandable
+
+Convention for naming the class name is PascalCase
+
+First Java Program
+1. Every Application begins with class definition.
+2. Save this file with same name as that of the classname and give the extension as .java
+3. Create the main method, starting point from the java application. JVM will start the execution of the program from the main method
+4. Print the message to the user on the console screen, we use System.out.println(), we enclose the message in double-quotes
+5. Every statement in the java application ends with (;) semi colon
+
+--------------------------------------------------------------------------------
+Variables
+It is location in the memory to store the data.
+
+Variable will be associated with 3 things:
+1. Name/Identifier
+2. Data/Value
+3. Datatype
+
+Datatypes: Describe the type of the data that can be stored in the memory and also specifies the amount of memory to be allocated to the variable
+
+We have 8 primitive datatypes:
+Number (Whole Number) 45,356,24656,2567667,8896
+1. byte		1 byte		-128 to 127
+2. short 	2 bytes
+3. int		4 bytes
+4. long		8 bytes
+
+Number (Fractional/Decimal) 78.56,345346.46456
+5. float	4 bytes
+6. double	8 bytes
+
+Character - single character - a,v
+7. char		1 byte
+
+Boolean - true/false
+8. boolean	----
+
+Variable Declaration
+Syntax:
+datatype identifier/name;
+
+or
+
+datatype identifier/name = value;
+
+Literal are the values assigned to the variables
+
+Rules for naming variable

@@ -1,0 +1,100 @@
+1st we created a java application or java file we save it as extention .java. For example testgreeting.java
+Then comes javac-- this is a compiler for java file that 
+is responsible for compiling java program. it produces
+bytecode file which is understood by jvm.
+this bytecode file has an extention of .class.
+Then comes jre.
+When we install java we installed java jdk--java development kit.
+jdk has all the helper files, compiler application,
+jre- java runtime environment required by enduser
+who execute the .class file.
+Within jre we have java virtual mc which is responsible
+for executing .class file.
+
+jvm makes the java app platform-independent but it itself
+is not system independent.
+
+java architecture consist of mainly 3 things--
+1. JVM 2. garbage collection, 3. JRE
+
+open a new text editor:
+
+class FirstProgram
+{
+	public static void main(String[] args){
+	}
+}
+
+save this file just as the name of the class with 
+the extention .java
+
+main is the entry point of every application.
+jvm for running the application search for the main method.
+
+
+To install Java17 on Windows, you can follow these steps:
+
+Download Java Development Kit (JDK):
+
+Go to the Oracle website or the OpenJDK website.
+Download the JDK installer for Windows. Choose the appropriate version (e.g., JDK 8, JDK 11, JDK 16) depending on your requirements. It's recommended to download the latest LTS (Long-Term Support) version for stability unless you specifically need features from a newer release.
+Run the Installer:
+
+Once the installer is downloaded, double-click on it to run.
+Follow the installation wizard instructions.
+Accept the License Agreement:
+
+During the installation process, you'll be prompted to accept the license agreement. Read through it and accept it to proceed.
+Choose Installation Directory:
+
+You can choose the directory where Java will be installed. By default, it's usually installed in C:\Program Files\Java\.
+Complete the Installation:
+
+Follow any additional instructions provided by the installer to complete the installation process.
+Set Up Environment Variables (Optional):
+
+You may need to set up the JAVA_HOME environment variable to point to the JDK installation directory. This step is optional but recommended for advanced usage and development purposes.
+To set JAVA_HOME:
+Right-click on "This PC" or "My Computer" and select "Properties".
+Click on "Advanced system settings".
+In the System Properties window, click on the "Environment Variables" button.
+Under System Variables, click "New" and add a variable named JAVA_HOME with the path to your JDK installation directory (e.g., C:\Program Files\Java\jdk1.8.0_211).
+Click "OK" to save the changes.
+Verify Installation:
+
+Open Command Prompt (search for "cmd" in the Start menu).
+Type java -version and press Enter. This command will display the installed Java version.
+Additionally, you can also type javac -version to check the Java Compiler version.
+
+Convention for naming the class name is PascalCase.
+
+class FirstProgram
+{
+	public static void main(String[] args){
+		System.out.println("Hello World");
+	}
+}
+
+
+D:\coreJava1>javac -version
+javac 17.0.1
+
+now the code has been compiled. If you will go into the same folder, u will notice FirstProgram.class file there.
+
+D:\coreJava1>java FirstProgram
+Hello World
+
+
+JVM tasks-load the class file,then it verifies the byte code so that if there are any changes in the byte file,
+then verifier gives an error that the changes are externally done. Then the execution by runtime interpreter 
+to execute the code.
+
+See the introduction to java ppt.
+
+class loader loads all the classses.
+
+Just in time compiler is used for compiling the bytecode into executable code. Generally, the system class, string class is compiled by jit compiler.
+And compiles them directly.
+
+
+ 
