@@ -1,0 +1,94 @@
+Variables
+It is location in the memory to store the data.
+
+Variable will be associated with 3 things:
+1. Name/Identifier
+2. Data/Value  ===> Literal/Input for the user
+3. Datatype
+
+Datatypes: Describe the type of the data that can be stored in the memory and also specifies the amount of memory to be allocated to the variable
+
+We have 8 primitive datatypes:
+Number (Whole Number) 45,356,24656,2567667,8896
+1. byte		1 byte		-128 to 127
+2. short 	2 bytes
+3. int		4 bytes
+4. long		8 bytes
+
+Number (Fractional/Decimal) 78.56,345346.46456
+5. float	4 bytes
+6. double	8 bytes
+
+Character - single character - a,v
+7. char		2 bytes
+
+Boolean - true/false
+8. boolean	----
+
+Non-Primitive Datatypes
+String 
+Array
+Object
+Enum
+
+Variable Declaration
+Syntax:
+datatype identifier/name;
+
+or
+
+datatype identifier/name = value;
+
+Literal are the values assigned to the variables
+
+Java is statically-type language, we specify the datatype of the variables before they are can be used.
+
+Rules for naming variable
+1. Names are case sensitive
+2. Must start either with a letter (a-z,A-Z), underscore or dollar
+3. Must not start with the digit
+4. Can contain digits,letters,underscore or dollar
+5. Must not contain whitespace or special character
+6. Choose name that having some meaning
+7. Cannot be a keyword/reserved words
+
+Comments
+Notes that can be added in the java program. It can also be the code that you don't want to compile in the class file.
+
+1. Single Line Comments (//comment)
+2. Multiline Comments (/* comment */)
+
+Operators
+Operators are the symbols that preform operation on the variable and values. 
+1. Arithmetic Operator
++ Addition
+- Subtraction
+* Multiplication
+/ Division (Quotient)
+% Modulus (Remainder after division)
+
+2. Assignment Operator
+Used to assign the value to the variable
+a = 20;
+assign the value 20 on the right of the operator to the variable a that is on left of the operator
+
+Compound Assignment Operator
+3. Relational Operator
+4. Logical Operator
+5. Bitwise Operator
+
+Typecasting
+1. Implicit Typecasting: conversion of the value by compiler from one data to another
+
+byte ---> short ---> int ---> long ---> float ---> double
+widening
+
+2. Explicit Typecasting: conversion of the value by programmer from one data to another
+
+byte <--- short <--- int <--- long <--- float <--- double
+narrowing
+
+
+
+
+
